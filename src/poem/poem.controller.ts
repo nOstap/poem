@@ -10,9 +10,12 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import { GetPoemsQuery } from './queries/get-poems.query';
+import { ClientKafka, Transport, Client, EventPattern } from '@nestjs/microservices';
+import { create } from 'domain';
 
 @Controller('poem')
 export class PoemController {
+
   constructor(
     private readonly commandBus: CommandBus,
     private readonly queryBus: QueryBus,

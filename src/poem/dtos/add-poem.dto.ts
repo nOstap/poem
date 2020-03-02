@@ -1,4 +1,4 @@
-export class AddPoemDto {
+export interface AddPoemDto {
     content: string;
     author: string;
 }

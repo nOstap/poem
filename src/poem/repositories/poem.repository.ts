@@ -8,6 +8,7 @@ export class PoemRepository {
 
   create(poemDto: AddPoemDto): Poem {
     const newPoem = new Poem(poemDto.author, poemDto.content);
+    console.log('Myszka :)');
     this.poems.push(newPoem);
 
     return newPoem;
