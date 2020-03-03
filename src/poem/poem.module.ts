@@ -1,12 +1,11 @@
-import { PoemSagas } from './sagas/poem.sagas';
-import { PoemRepository } from './repositories/poem.repository';
-import { PoemAddedHandler } from './handlers/poem-added.handler';
-import { BroadcastPoemHandler } from './handlers/broadcast-poem.handler';
-import { AddPoeamHandler } from './handlers/add-poem.handler';
 import { Module } from '@nestjs/common';
-import { PoemController } from './poem.controller';
 import { CqrsModule } from '@nestjs/cqrs';
+import { AddPoeamHandler } from './handlers/add-poem.handler';
 import { GetPoemsHandler } from './handlers/get-poems.handler';
+import { PoemAddedHandler } from './handlers/poem-added.handler';
+import { PoemController } from './poem.controller';
+import { PoemRepository } from './repositories/poem.repository';
+import { PoemSagas } from './sagas/poem.sagas';
 
 @Module({
   imports: [CqrsModule],
@@ -14,7 +13,6 @@ import { GetPoemsHandler } from './handlers/get-poems.handler';
   providers:[
     PoemRepository,
     AddPoeamHandler,
-    BroadcastPoemHandler,
     GetPoemsHandler,
     PoemAddedHandler,
     PoemSagas,
