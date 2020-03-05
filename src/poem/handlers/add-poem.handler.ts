@@ -1,8 +1,7 @@
-import { AddPoemCommand } from './../commands/add-poem.command';
-import { CommandHandler, ICommandHandler, EventPublisher } from '@nestjs/cqrs';
-import { PoemRepository } from '../repositories/poem.repository';
-import { Logger } from '@nestjs/common';
+import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
 import { Author } from '../models/author.model';
+import { PoemRepository } from '../repositories/poem.repository';
+import { AddPoemCommand } from './../commands/add-poem.command';
 
 @CommandHandler(AddPoemCommand)
 export class AddPoeamHandler implements ICommandHandler<AddPoemCommand> {
